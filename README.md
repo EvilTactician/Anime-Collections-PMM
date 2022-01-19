@@ -66,7 +66,24 @@ Repeat for as many users as you want - just copy and paste more entries.
 
 If you don't wish to use these, simply delete them from the file.
 
+```yaml
+  Donghua:
+    collection_order: alpha
+    sync_mode: sync
+    plex_search:
+      all:
+        audio_language: zh
+        title.not: aggretsuko
+  Mobile Suit Gundam:
+    collection_order: alpha
+    sync_mode: sync
+    plex_search:
+      all:
+        title: Gundam
+```
 
+The above creates the Donghua and Mobile Suit Gundam collections based on a Plex Search. Similar to advanced filters within Plex itself.
+		
 ```yaml
   Unmatched:
     plex_collectionless:
@@ -75,10 +92,20 @@ If you don't wish to use these, simply delete them from the file.
     collection_order: alpha
 ```
 
-The above (at the very bottom of the file) creates a collection named "Unmatched" which will contain every Anime in your library which PMM wasn't able to add to the MAL Genres. I use this myself to see which Anime PMM couldn't map.
+The above (at the very bottom of the file) creates a collection named "Unmatched" which will contain every Anime in your library which PMM wasn't able to add to the MAL Genres. I use this myself to see which Anime PMM couldn't map.<br>
 PMM maps via external resources and it sometimes takes a while for those resources to update as they rely on human intervention. It doesn't necessarily mean there is something wrong with your library or config - it's like that those Anime haven't been mapped.
 
 Again, if you don't want this - just delete those lines.
+
+```yaml
+  Erotica:
+    template: { name: MAL Genre, genre_id: 49 }
+  Hentai:
+    template: { name: MAL Genre, genre_id: 12 }
+```
+
+Finally, I call the above out specicially. If you don't have any Erotica and Hentai, you can speed up your script running time by removing these lines. It'll save you a minute.<br>
+Again as with any others, if you don't have any, the collections won't be created if your config.yml is set to require a minimum of 1 show for collections.
 
 
 ## Custom Artwork
