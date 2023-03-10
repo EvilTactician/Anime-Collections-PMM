@@ -9,8 +9,8 @@
 ##########################################
 templates:
   MAL Genre:
-    mal_genre:
-      genre_id: <<genre_id>>
+    mal_search:
+      genre: <<genre_id>>
     collection_order: alpha
     collection_mode: hide
     sync_mode: sync
